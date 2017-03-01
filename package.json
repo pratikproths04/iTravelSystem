@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Intelligent Travel System",
   "scripts": {
-    "node": "app.js",
-    	"start":"app.js"
+    	"start":"node app.js"
   },
   "author": "Pratik Pandey",
   "license": "ISC",
