@@ -12,10 +12,16 @@ app.get('/search', function (req, res) {
 	  token_secret: 'wXcRTdTwVO7IQnAZMr_8BQNQQeQ',
 	});
 	yelp.search({ term: 'tourism', location : place, radius_filter: '10000', limit: '5' })
-	.then(function (data) {
-	  var jsonParse1=JSON.parse(JSON.stringify(data));
-	  console.log("-------------------"+data.businesses[0].name);
-	  res.send({status: "hello from server", "data":data.businesses[0].name});  
+	.then(function (data) {	
+		var jsonParse1=JSON.parse(JSON.stringify(data));
+		//console.log("data: "+data);
+		//console.log("-------------------"+data.businesses[0]);
+		var arr = [], i;
+		for(i=0; i<data.businesses.length; i++){
+			arr.push(data.businesses[i].name);
+		}
+		//console.log("DATA IN THE ARRAY: "+arr);
+		res.send({status: "hello from server", "data":arr});
 	});
 });
 
