@@ -31,10 +31,10 @@ app.get('/search', function (req, res) {
 	var place=req.param("name");
 	console.log("place: "+place); 
 	var yelp = new Yelp({
-	  consumer_key: '6qSzExrzRp8VLcup-She5A',
-	  consumer_secret: 'h3t8vZyydkeEHg9kaefKhP46nWY',
-	  token: 'geCWnAkZMYFWFR4gVYM-mFYg3Bq-_sR6',
-	  token_secret: 'wXcRTdTwVO7IQnAZMr_8BQNQQeQ',
+	  consumer_key: '',
+	  consumer_secret: '',
+	  token: '',
+	  token_secret: '',
 	});
 	yelp.search({ term: 'tourism', location : place, radius_filter: '10000', limit: '5' })
 	.then(function (data) {	
